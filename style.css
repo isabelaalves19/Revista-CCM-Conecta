@@ -30,19 +30,12 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="Símbolo CCM">
-    <span>CCM Conecta</span>
-  </div>
-  <nav>
-    <a href="#editorial">Editorial</a>
-    <a href="#desfile">07 de Setembro</a>
-    <a href="#ganhando">Ganhando o Mundo</a>
-    <a href="#prova">Prova Paraná</a>
-    <a href="#contato">Contato</a>
-  </nav>
-</header>
+
+header .logo {
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 .logo {
   display: flex;
   align-items: center; /* centraliza verticalmente */
@@ -56,9 +49,15 @@ header {
 .logo img {
   height: 40px;  /* você pode aumentar ou diminuir */
   margin-right: 10px; /* espaço entre a logo e o texto */
+}.logo {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--branco);
 }
-}
-}
+
 
 nav a {
   color: var(--branco);
