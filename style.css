@@ -31,21 +31,20 @@ header {
   align-items: center;
 }
 
-header .logo {
-  font-size: 1.4em;
-  font-weight: bold;
-  letter-spacing: 2px;
-  .logo {
+.logo {
   display: flex;
-  align-items: center;
+  align-items: center; /* centraliza verticalmente */
   font-size: 1.4em;
   font-weight: bold;
   letter-spacing: 2px;
+  color: var(--branco);
 }
 
+/* Ajusta o tamanho da imagem */
 .logo img {
-  height: 40px;   /* tamanho do símbolo */
-  margin-right: 10px;
+  height: 40px;  /* você pode aumentar ou diminuir */
+  margin-right: 10px; /* espaço entre a logo e o texto */
+}
 }
 }
 
