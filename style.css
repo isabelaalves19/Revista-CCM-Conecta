@@ -78,6 +78,27 @@ nav a:hover {
   background: var(--destaque);
   color: var(--branco);
 }
+.subheader {
+  background: var(--preto);
+  padding: 10px 30px;
+}
+
+.subheader nav {
+  display: flex;
+  gap: 20px;
+}
+
+.subheader nav a {
+  color: var(--branco);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.subheader nav a:hover {
+  color: var(--destaque);
+}
 .capa h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
