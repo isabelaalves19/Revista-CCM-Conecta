@@ -78,6 +78,12 @@ nav a:hover {
   background: var(--destaque);
   color: var(--branco);
 }
+capa {
+  background: url('image\ copy.png') no-repeat center;
+  background-size: cover;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
 .subheader {
   background: var(--preto);
   padding: 10px 100px;
