@@ -1,4 +1,4 @@
-:root { --cor:#047857; --fundo:#f3fcf7; }
+:root { --cor:#030b81; --fundo:#f3fcf7; }
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--fundo);color:#2b2b2b}
 .topo{background:var(--cor);color:#fff;text-align:center;padding:26px 16px}
