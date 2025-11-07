@@ -59,6 +59,7 @@ body{
     border-radius:12px;
     margin-top:18px;
     box-shadow:0 4px 12px rgba(0,0,0,.06);
+    text-align: justify;
 }
 .lista ul{
     margin:0;
