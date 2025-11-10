@@ -141,13 +141,14 @@ img, video, svg {
     padding: 8px;
   }
 
-  .menu a {
-    padding: 10px 10px;
-    font-size: 1rem;
-    /* Ocupa a largura e evita “aperto” quando houver muitos links */
-    flex: 1 1 calc(50% - 8px);
-    text-align: center;
-  }
+  .menu {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #333;
+  padding: 10px;
+}
 
   .conteudo {
     margin: 16px auto 48px;
