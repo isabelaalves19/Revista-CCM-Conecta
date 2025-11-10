@@ -3,79 +3,198 @@
   --escuro: #222;
   --cinza: #f3f3f3;
   --texto: #333;
+
+  /* Tipografia fluida */
+  --fs-base: clamp(14px, 1.6vw, 16px);
+  --fs-sm: clamp(12px, 1.4vw, 14px);
+  --fs-lg: clamp(18px, 2.4vw, 22px);
 }
-* { 
-  box-sizing: border-box; 
+
+* {
+  box-sizing: border-box;
 }
+
+/* Acessibilidade básica de foco */
+:focus-visible {
+  outline: 2px solid #5aa7ff;
+  outline-offset: 2px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%; /* evita zoom automático no iOS */
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--texto);
   background: var(--cinza);
+  font-size: var(--fs-base);
+  line-height: 1.6;
 }
-.topo { 
-  background: var(--prim); 
-  color: #fff; text-align: 
-  center; padding: 28px 16px; 
+
+/* Garantir que mídias não estourem a tela */
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== TOPO ===== */
+.topo {
+  background: var(--prim);
+  color: #fff;
+  text-align: center;
+  padding: 28px 16px;
 }
 .topo h1 {
-  margin: 0 0 6px; 
+  margin: 0 0 6px;
+  font-size: var(--fs-lg);
 }
-.sub { 
-  margin: 0; 
-  opacity: .9; 
+.sub {
+  margin: 0;
+  opacity: .9;
+  font-size: var(--fs-sm);
 }
-.editor { 
-  margin: 6px 0 0; 
-  font-size: .95rem; 
+.editor {
+  margin: 6px 0 0;
+  font-size: .95rem;
 }
-.menu { 
-  display: flex; 
-  gap: 12px; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-  background: #333; 
-  padding: 10px; 
+
+/* ===== MENU ===== */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #333;
+  padding: 10px;
 }
-.menu a { 
-  color: #fff; 
-  text-decoration: none; 
-  font-weight: bold; 
-  padding: 6px 10px; }
-.menu a.ativo, .menu a:hover {
-  text-decoration: underline; 
+
+/* Torna o menu confortável ao toque */
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 12px;              /* maior área clicável */
+  border-radius: 8px;
+  line-height: 1;
+  font-size: 0.95rem;
+  white-space: nowrap;             /* evita quebrar no meio da palavra */
 }
+
+.menu a.ativo,
+.menu a:hover {
+  text-decoration: underline;
+  background: #444;
+}
+
+/* ===== CONTEÚDO ===== */
 .conteudo {
   max-width: 1000px;
-  margin: 24px auto 80px; 
+  margin: 24px auto 80px;
   padding: 0 16px;
-  text-align: justify; 
+  text-align: justify;
+  hyphens: auto;            /* melhora a quebra de palavras no mobile */
 }
-.hero img { 
-  width: 100%; 
-  border-radius: 12px; 
-  display: block; 
+
+.hero img {
+  width: 100%;
+  border-radius: 12px;
 }
+
 .hero figcaption {
-  text-align: center; 
-  font-size: .9rem; 
-  color: #555; 
-  margin-top: 6px; 
+  text-align: center;
+  font-size: .9rem;
+  color: #555;
+  margin-top: 6px;
+  padding: 0 6px;
 }
-.editorial { 
+
+.editorial {
   background: #fff;
-  padding: 18px; 
-  border-radius: 12px; 
-  margin-top: 18px; 
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 18px;
   box-shadow: 0 4px 14px rgba(0,0,0,.06);
-  text-align: justify; 
+  text-align: justify;
 }
+
+/* ===== RODAPÉ ===== */
 .rodape {
-  text-align: center; 
-  padding: 14px; 
-  background: var(--escuro); 
-  color: #fff; 
-  position: sticky; 
-  bottom: 0; 
-  width: 100%; 
+  text-align: center;
+  padding: 14px;
+  background: var(--escuro);
+  color: #fff;
+  /* Evita sobrepor conteúdo em telas pequenas */
+  position: static;
+  width: 100%;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .menu {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .menu a {
+    padding: 10px 10px;
+    font-size: 1rem;
+    /* Ocupa a largura e evita “aperto” quando houver muitos links */
+    flex: 1 1 calc(50% - 8px);
+    text-align: center;
+  }
+
+  .conteudo {
+    margin: 16px auto 48px;
+    padding: 0 12px;
+  }
+
+  .editorial {
+    padding: 16px;
+  }
+
+  .hero figcaption {
+    font-size: var(--fs-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Em celulares menores, o menu vira lista de uma coluna */
+  .menu a {
+    flex: 1 1 100%;
+  }
+
+  .topo {
+    padding: 20px 12px;
+  }
+
+  .topo h1 {
+    font-size: 1.4rem;
+  }
+
+  .editor {
+    font-size: 0.9rem;
+  }
+
+  .conteudo {
+    padding: 0 10px;
+  }
+
+  .editorial {
+    border-radius: 10px;
+  }
+}
+
+/* Modo “reduzir movimento” para usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
 }
