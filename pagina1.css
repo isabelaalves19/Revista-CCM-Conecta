@@ -48,7 +48,8 @@ body {
 .conteudo {
   max-width: 1000px;
   margin: 24px auto 80px; 
-  padding: 0 16px; 
+  padding: 0 16px;
+  text-align: justify; 
 }
 .hero img { 
   width: 100%; 
